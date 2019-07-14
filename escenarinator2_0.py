@@ -63,24 +63,25 @@ if side_a < 1.25:
 if side_b < 1.25:
     side_b = 1.25
 amount_side_a, amount_side_b, final_size_a, final_size_b = calculateinator(side_a, side_b)
-print(f"Medida Final = {final_size_a} por {final_size_b} ")
-print(f"Un total de {amount_side_a} por {amount_side_b} tablas, un total de {amount_side_a*amount_side_b} tablas")
-total1 = baseinator(amount_side_a)
-total2 = baseinator(amount_side_b)
+print(f"Medida Final = {final_size_a} metros por {final_size_b} metros")
+print(f"El escenario final es de {amount_side_a} tablas por {amount_side_b} tablas")
+total1 = baseinator(amount_side_b)
+total2 = baseinator(amount_side_a)
 half_a = 0
 half_b = 0
 if amount_side_a % 2 == 0:
-    half_a = 2 * total1 - 2
-    print (half_a)
+    half_a = 2 * total1 
+    print (total1)
 if amount_side_b % 2 == 0:
-    half_b = 2 * total2 - 2
-    print (half_b)
+    half_b = 2 * total2 
+    print (total2)
 plotinator(amount_side_a, amount_side_b)
 total_bases = total1*total2
 if (half_a > 0 and half_b > 0):
-    total_crowns = total_bases*4 - (half_a + half_b) + 4
+    total_crowns = total_bases*4 - (half_a + half_b) + 1
 elif (half_a > 0 or half_b > 0):
     total_crowns = total_bases*4 - (half_a + half_b)
 else:
     total_crowns = total_bases * 4
-print(f"Se requieren {total_bases} crucetas y {total_crowns} coronitas")
+
+print(f"Se requiere un total de {amount_side_a*amount_side_b} tablas, {total_bases} crucetas y {total_crowns} coronitas")
